@@ -14,12 +14,13 @@ end
 
 get '/2' do
   service = inject('service:MyService')
-  begin
-    service.test
-  rescue
-    "rescued"
-  end
-  "test"
+  service.test
+  return "test"
 end
 
+get '/3' do
+  service = inject('service:MyService')
+  service.test2
+  return "test2"
+end
 

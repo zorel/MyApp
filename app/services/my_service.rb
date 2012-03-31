@@ -1,3 +1,4 @@
+require 'java'
 
 class MyService
   def initialize
@@ -8,7 +9,11 @@ class MyService
     begin
       java.lang.Integer.parse_int("asdf")
     rescue java.lang.NumberFormatException => e
-      return "Failed to parse integer: #{e.message}"
+      puts "Failed to parse integer: #{e.message}"
     end
+  end
+
+  def test2
+    return 42 / 0
   end
 end
